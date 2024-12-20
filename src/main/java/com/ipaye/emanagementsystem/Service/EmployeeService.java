@@ -20,7 +20,7 @@ public class EmployeeService {
         this.employeeRepository=employeeRepository;
     }
 
-    public Employee createEmployee(EmployeeRequest employeeRequest) {
+    public Employee createEmployee(Employee employeeRequest) {
         Employee employee = new Employee();
         employee.setName(employeeRequest.getName());
         employee.setEmail(employeeRequest.getEmail());

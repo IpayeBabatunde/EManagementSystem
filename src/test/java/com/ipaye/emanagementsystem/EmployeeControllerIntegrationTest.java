@@ -16,7 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-
 public class EmployeeControllerIntegrationTest {
 
     @Autowired
@@ -28,6 +27,7 @@ public class EmployeeControllerIntegrationTest {
         //Arrange
         String newEmployeeJson = """
                 {
+                      "id" : 1,
                      "name" : "John Ray",
                      "email" : "JohnR@gmail.com",
                      "departmentId" : 1,
@@ -42,7 +42,7 @@ public class EmployeeControllerIntegrationTest {
                 .content(newEmployeeJson))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.message").value("EmployeeCreatedSuccessfully"));
+                .andExpect(jsonPath("$.message").value("Employee created successfully"));
     }
 
     @Test

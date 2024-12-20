@@ -29,7 +29,7 @@ public class Employee {
     @Column(name = "department_id", nullable=false)
     private Long departmentId;
 
-    @NotNull(message="Role d is required")
+    @NotNull(message="Role id is required")
     @Column(name="Role_id", nullable=false)
     private Long roleId;
 
@@ -82,7 +82,7 @@ public class Employee {
         return departmentId;
     }
 
-    public void setDepartmentId(Long departmentId) {
+    public void setDepartmentId(Long  departmentId) {
         this.departmentId=departmentId;
     }
 
